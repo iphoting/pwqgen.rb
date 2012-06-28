@@ -14,13 +14,11 @@ Options:
 
 require 'docopt'
 
-if __FILE__ == $0
-	options = Docopt(doc, Pwqgen::VERSION)
+options = Docopt(doc, Pwqgen::VERSION)
 
-	if ARGV.length > 0 && ARGV[0].to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) then
-		p Pwqgen.generate(ARGV[0].to_i)
-	else
-		p Pwqgen.generate
-	end
+if ARGV.length > 0 && ARGV[0].to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) then
+p Pwqgen.generate(ARGV[0].to_i)
+else
+p Pwqgen.generate
 end
 
