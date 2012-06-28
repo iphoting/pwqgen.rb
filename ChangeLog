@@ -1,3 +1,8 @@
+= 0.0.2 / Unreleased
+
+	* Added unit tests.
+	* Simplified invocation. You can now just call `Pwqgen.generate`.
+
 = 0.0.1 / 2012-06-28
 
 	* Initial release.
