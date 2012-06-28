@@ -9,11 +9,12 @@ Gem::Specification.new do |s|
   s.description = "pwqgen.rb implements passwdqc's pwqgen in Ruby."
   s.authors     = ["Ronald Ip"]
   s.email       = 'myself@iphoting.com'
-  s.require_paths = ['lib']
-  s.files       = `git ls-files`.split("\n")
   s.homepage    = 'https://github.com/iphoting/pwqgen.rb'
-  s.has_rdoc    = false
-  s.executables << 'pwqgen.rb'
+
+  s.files       = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ['lib']
 
   s.add_runtime_dependency('docopt', "~>0.0.4")
 end

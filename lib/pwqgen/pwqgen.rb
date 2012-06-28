@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'pwqgen/wordlist'
 
 # Public: Pwqgen is a Ruby implementation of passwdqc's pwqgen password
@@ -13,16 +12,20 @@ require 'pwqgen/wordlist'
 # 	# => "Caesar-Madam7draft8choose"
 #
 module Pwqgen
+
+	def self.generate(length = 3)
+		self::Generator.new.generate length
+	end
+
 	class Generator
 		def initialize
 			@@wordlist_size = @@wordlist.length
 			@@separators = "-_!$&*+=23456789".split(//)
 			@@separators_size = @@separators.length
-			@length = 3
 			@rand = Random.new
 		end
 
-		def generate(length = @length)
+		def generate(length = 3)
 			output = Array.new
 			for i in 1..length
 				output << @@wordlist[@rand.rand(@@wordlist_size)]
