@@ -14,4 +14,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/iphoting/pwqgen.rb'
   s.has_rdoc    = false
   s.executables << 'pwqgen.rb'
+
+  s.add_runtime_dependency('docopt', "~>0.0.4")
 end
