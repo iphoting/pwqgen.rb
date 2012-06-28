@@ -1,4 +1,4 @@
-# Stolen from passwdqc's wordset_4k.c.
+# Private: Wordlist stolen from passwdqc's wordset_4k.c.
 # http://www.openwall.com/passwdqc/
 # 
 # 4096 English words for generation of easy to memorize random passphrases.

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Pwqgen - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/pwqgen.rb
+    <li>lib/pwqgen/pwqgen.rb
+    <li>lib/pwqgen/wordlist.rb
+    <li>lib/pwqgen/version.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Pwqgen.html">Pwqgen</a>
+  
+    <li><a href="./Pwqgen/Generator.html">Pwqgen::Generator</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Pwqgen</h1>
+
+  <div id="description" class="description">
+    
+<p>Public: <a href="Pwqgen.html">Pwqgen</a> is a Ruby implementation of
+passwdqc’s pwqgen password generator.</p>
+
+<p>Example</p>
+
+<pre class="ruby"><span class="ruby-constant">Pwqgen</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span>
+<span class="ruby-comment"># =&gt; &quot;Crime2Behave=growth&quot;</span>
+
+<span class="ruby-constant">Pwqgen</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span> <span class="ruby-value">4</span>
+<span class="ruby-comment"># =&gt; &quot;Caesar-Madam7draft8choose&quot;</span>
+</pre>
+
+<p>Private: Wordlist stolen from passwdqc’s wordset_4k.c. <a
+href="http://www.openwall.com/passwdqc/">www.openwall.com/passwdqc/</a></p>
+
+<p>4096 English words for generation of easy to memorize random passphrases.
+This list comes from the MakePass passphrase generator developed by
+Dianelos Georgoudis &lt;dianelos at tecapro.com&gt;, which was announced on
+sci.crypt on 1997/10/24.  Here’s a relevant excerpt from that posting:</p>
+
+<p>&gt; The 4096 words in the word list were chosen according to the following
+&gt; criteria: &gt;    - each word must contain between 3 and 6 characters
+&gt;    - each word must be a common English word &gt;    - each word
+should be clearly different from each other &gt;      word,
+orthographically or semantically &gt; &gt; The MakePass word list has been
+placed in the public domain</p>
+
+<p>At least two other sci.crypt postings by Dianelos Georgoudis also state
+that the word list is in the public domain, and so did the web page at:</p>
+
+<p><a
+href="http://web.archive.org/web/%2a/http://www.tecapro.com/makepass.html">web.archive.org/web/%2a/http://www.tecapro.com/makepass.html</a></p>
+
+<p>which existed until 2006 and is available from the Wayback Machine as of
+this writing (March 2010).  Specifically, the web page said:</p>
+
+<p>&gt; The MakePass word list has been placed in the public domain.  To
+download &gt; a copy click here.  You can use the MakePass word list for
+many other &gt; purposes.</p>
+
+<p>“To download a copy click here” was a link to free/makepass.lst, which is
+currently available via the Wayback Machine:</p>
+
+<p><a
+href="http://web.archive.org/web/%2a/http://www.tecapro.com/free/makepass.lst">web.archive.org/web/%2a/http://www.tecapro.com/free/makepass.lst</a></p>
+
+<p>Even though the original description of the list stated that “each word
+must contain between 3 and 6 characters”, there were two 7-character words:
+“England” and “Germany”.  For use in passwdqc, these have been replaced
+with “erase” and “gag”.</p>
+
+<p>The code in passwdqc_check.c and passwdqc_random.c makes the following
+assumptions about this list:</p>
+<ul><li>
+<p>there are exactly 4096 words;</p>
+</li><li>
+<p>the words are of up to 6 characters long;</p>
+</li><li>
+<p>although some words may contain capital letters, no two words differ by</p>
+</li></ul>
+
+<p>the case of characters alone (e.g., converting the list to all-lowercase
+would yield a list of 4096 unique words);</p>
+<ul><li>
+<p>the words contain alphabetical characters only;</p>
+</li><li>
+<p>if an entire word on this list matches the initial substring of other</p>
+</li></ul>
+
+<p>word(s) on the list, it is placed immediately before those words (e.g.,
+“bake”, “baker”, “bakery”).</p>
+
+<p>Additionally, the default minimum passphrase length of 11 characters
+specified in passwdqc_parse.c has been chosen such that a passphrase
+consisting of any three words from this list with two separator characters
+will pass the minimum length check.  In other words, this default assumes
+that no word is shorter than 3 characters.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
