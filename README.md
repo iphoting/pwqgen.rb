@@ -1,6 +1,6 @@
 # pwqgen.rb
 
-[![Build Status](https://secure.travis-ci.org/iphoting/pwqgen.rb.png)](http://travis-ci.org/iphoting/pwqgen.rb)
+[![Build Status](https://secure.travis-ci.org/iphoting/pwqgen.rb.png)](http://travis-ci.org/iphoting/pwqgen.rb) [![Dependency Status](https://gemnasium.com/iphoting/pwqgen.rb.png)](https://gemnasium.com/iphoting/pwqgen.rb)
 
 pwqgen.rb is a Ruby implementation of passwdqc's pwqgen password generator.
 
