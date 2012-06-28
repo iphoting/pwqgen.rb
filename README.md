@@ -10,14 +10,14 @@ pwqgen.rb is a Ruby implementation of passwdqc's pwqgen password generator.
 gem install pwqgen.rb
 ```
 
-### Usage
+## Usage
 
-#### CLI
+### CLI
 ```
 $ pwqgen.rb
 ```
 
-#### Ruby App
+### Ruby App
 
 - First, add `pwqgen.rb` into your `Gemfile`.
 
@@ -25,7 +25,7 @@ $ pwqgen.rb
 
 - Then, invoke `Pwqgen.generate` for a random password.
 
-### Contributing
+## Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
