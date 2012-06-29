@@ -6,8 +6,8 @@ require 'pwqgen'
 doc = "Usage: pwqgen.rb [options] <length>
 
 Options:
-  -h, --help  show this help message and exit
-  --version   show version and exit
+  -h, --help      show this help message and exit
+  -v, --version   show version and exit
 
 <length>: Number of words in the passphrase. [default: 3]
 "
