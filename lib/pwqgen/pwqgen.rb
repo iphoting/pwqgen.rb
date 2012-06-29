@@ -3,7 +3,13 @@ require 'pwqgen/wordlist'
 # Public: Pwqgen is a Ruby implementation of passwdqc's pwqgen password
 # generator.
 #
-# Example
+# Examples
+#
+#   Pwqgen.generate
+#   # => "Unrest3Male!trout"
+#
+#   Pwqgen.new.generate
+#   # => "Obese6Perish6viola"
 #
 # 	Pwqgen::Generator.new.generate
 # 	# => "Crime2Behave=growth"

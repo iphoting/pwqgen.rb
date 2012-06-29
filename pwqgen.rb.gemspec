@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'pwqgen.rb'
   s.version     = Pwqgen::VERSION
   s.summary     = "pwqgen in Ruby"
-  s.description = "pwqgen.rb implements passwdqc's pwqgen in Ruby."
+  s.description = "pwqgen.rb is a Ruby implementation of passwdqc's pwqgen, a random pronouncable password generator."
   s.authors     = ["Ronald Ip"]
   s.email       = 'myself@iphoting.com'
   s.homepage    = 'https://github.com/iphoting/pwqgen.rb'
