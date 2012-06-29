@@ -3,7 +3,7 @@
 require 'pwqgen/version'
 require 'pwqgen'
 
-doc = "Usage: pwqgen.rb [options] <length>
+doc = "Usage: pwqgen.rb [options] [<length>]
 
 Options:
   -h, --help      show this help message and exit
