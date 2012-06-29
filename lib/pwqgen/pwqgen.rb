@@ -17,6 +17,10 @@ module Pwqgen
 		self::Generator.new.generate length
 	end
 
+	def self.new
+		self::Generator.new
+	end
+
 	class Generator
 		def initialize
 			@@wordlist_size = @@wordlist.length
