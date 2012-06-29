@@ -1,3 +1,9 @@
+= 0.0.3 / Unreleased
+
+	* Improved CLI output.
+	* `Pwqgen.new` now works.
+	* Updated documentation with better usage examples.
+
 = 0.0.2 / 2012-06-29
 
 	* Added unit tests.

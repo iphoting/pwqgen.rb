@@ -90,6 +90,8 @@
   
     <li class="file"><a href="../Gemfile.html">Gemfile</a>
   
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
   </ul>
 </nav>
 
@@ -149,12 +151,11 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pwqgen/pwqgen.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/pwqgen/pwqgen.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
         <span class="ruby-identifier">@@wordlist_size</span> = <span class="ruby-identifier">@@wordlist</span>.<span class="ruby-identifier">length</span>
         <span class="ruby-identifier">@@separators</span> = <span class="ruby-string">&quot;-_!$&amp;*+=23456789&quot;</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r/</span>)
         <span class="ruby-identifier">@@separators_size</span> = <span class="ruby-identifier">@@separators</span>.<span class="ruby-identifier">length</span>
-        <span class="ruby-ivar">@length</span> = <span class="ruby-value">3</span>
         <span class="ruby-ivar">@rand</span> = <span class="ruby-constant">Random</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
@@ -177,20 +178,33 @@
         
         <div class="method-heading">
           <span class="method-name">generate</span><span
-            class="method-args">(length = @length)</span>
+            class="method-args">(length = 3)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
 
         <div class="method-description">
           
-          
+          <p>Public: Returns a random generated password string.</p>
+
+<p>length - number of words used to create the passphrase.</p>
+
+<p>Example</p>
+
+<pre class="ruby"><span class="ruby-identifier">generate</span> <span class="ruby-value">2</span>
+<span class="ruby-comment"># =&gt; &quot;Loyal8atomic&quot;</span>
+
+<span class="ruby-identifier">generate</span>
+<span class="ruby-comment"># =&gt; &quot;Gate*Abound&amp;hull&quot;</span>
+</pre>
+
+<p>Returns a password string.</p>
           
 
           
           <div class="method-source-code" id="generate-source">
-            <pre><span class="ruby-comment"># File lib/pwqgen/pwqgen.rb, line 25</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">length</span> = <span class="ruby-ivar">@length</span>)
+            <pre><span class="ruby-comment"># File lib/pwqgen/pwqgen.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">length</span> = <span class="ruby-value">3</span>)
         <span class="ruby-identifier">output</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
         <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">length</span>
                 <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">@@wordlist</span>[<span class="ruby-ivar">@rand</span>.<span class="ruby-identifier">rand</span>(<span class="ruby-identifier">@@wordlist_size</span>)]
