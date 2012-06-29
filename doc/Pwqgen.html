@@ -47,7 +47,6 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/pwqgen.rb
     <li>lib/pwqgen/pwqgen.rb
     <li>lib/pwqgen/wordlist.rb
     <li>lib/pwqgen/version.rb
@@ -61,7 +60,19 @@
     
     
     
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-c-generate">::generate</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+  </ul>
+</nav>
+
   </div>
 
   <div id="project-metadata">
@@ -73,6 +84,8 @@
     <li class="file"><a href="./ChangeLog.html">ChangeLog</a>
   
     <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
   
   </ul>
 </nav>
@@ -100,13 +113,19 @@
 <p>Public: <a href="Pwqgen.html">Pwqgen</a> is a Ruby implementation of
 passwdqc’s pwqgen password generator.</p>
 
-<p>Example</p>
+<p>Examples</p>
 
-<pre class="ruby"><span class="ruby-constant">Pwqgen</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span>
-<span class="ruby-comment"># =&gt; &quot;Crime2Behave=growth&quot;</span>
+<pre class="ruby"><span class="ruby-constant">Pwqgen</span>.<span class="ruby-identifier">generate</span>
+<span class="ruby-comment"># =&gt; &quot;Unrest3Male!trout&quot;</span>
 
-<span class="ruby-constant">Pwqgen</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span> <span class="ruby-value">4</span>
-<span class="ruby-comment"># =&gt; &quot;Caesar-Madam7draft8choose&quot;</span>
+<span class="ruby-constant">Pwqgen</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span>
+<span class="ruby-comment"># =&gt; &quot;Obese6Perish6viola&quot;</span>
+
+    <span class="ruby-constant">Pwqgen</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span>
+    <span class="ruby-comment"># =&gt; &quot;Crime2Behave=growth&quot;</span>
+
+    <span class="ruby-constant">Pwqgen</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span> <span class="ruby-value">4</span>
+    <span class="ruby-comment"># =&gt; &quot;Caesar-Madam7draft8choose&quot;</span>
 </pre>
 
 <p>Private: Wordlist stolen from passwdqc’s wordset_4k.c. <a
@@ -204,6 +223,85 @@ that no word is shorter than 3 characters.</p>
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-generate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate</span><span
+            class="method-args">(length = 3)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Public: Returns a random generated password string.</p>
+
+<p>length - number of words used to create the passphrase.</p>
+
+<p>Example</p>
+
+<pre class="ruby"><span class="ruby-constant">Pwqgen</span>.<span class="ruby-identifier">generate</span> <span class="ruby-value">2</span>
+<span class="ruby-comment"># =&gt; &quot;Loyal8atomic&quot;</span>
+
+<span class="ruby-constant">Pwqgen</span>.<span class="ruby-identifier">generate</span>
+<span class="ruby-comment"># =&gt; &quot;Gate*Abound&amp;hull&quot;</span>
+</pre>
+
+<p>Returns a password string.</p>
+          
+
+          
+          <div class="method-source-code" id="generate-source">
+            <pre><span class="ruby-comment"># File lib/pwqgen/pwqgen.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">length</span> = <span class="ruby-value">3</span>)
+        <span class="ruby-keyword">self</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">generate</span> <span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generate-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/pwqgen/pwqgen.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-keyword">self</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->
