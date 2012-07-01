@@ -4,4 +4,4 @@ rvm:
     - 1.9.2
     - jruby-19mode
     - ruby-head
-    - jruby-head
+#    - jruby-head
