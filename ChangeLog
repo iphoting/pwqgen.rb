@@ -3,6 +3,8 @@
 	* Improved CLI output.
 	* `Pwqgen.new` now works.
 	* Updated documentation with better usage examples.
+	* Forked and included docopt.rb, to workaround overly high rubygems
+	version requirement.
 
 = 0.0.2 / 2012-06-29
 

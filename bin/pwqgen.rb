@@ -12,7 +12,7 @@ Options:
 <length>: Number of words in the passphrase. [default: 3]
 "
 
-require 'docopt'
+require 'pwqgen/docopt'
 
 options = Docopt(doc, Pwqgen::VERSION)
 
