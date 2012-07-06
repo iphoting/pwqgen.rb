@@ -1,4 +1,5 @@
 require 'pwqgen/wordlist'
+require 'securerandom'
 
 # Public: Pwqgen is a Ruby implementation of passwdqc's pwqgen password
 # generator.
@@ -45,7 +46,7 @@ module Pwqgen
 			@@wordlist_size = @@wordlist.length
 			@@separators = "-_!$&*+=23456789".split(//)
 			@@separators_size = @@separators.length
-			@rand = Random.new
+			@rand = SecureRandom
 		end
 
 		# Public: Returns a random generated password string.
@@ -64,10 +65,10 @@ module Pwqgen
 		def generate(length = 3)
 			output = Array.new
 			for i in 1..length
-				output << @@wordlist[@rand.rand(@@wordlist_size)]
-				output[i-1] = output[i-1].capitalize if @rand.rand(2)
+				output << @@wordlist[@rand.random_number(@@wordlist_size)]
+				output[i-1] = output[i-1].capitalize if @rand.random_number(2)
 
-				output << @@separators[@rand.rand(@@separators_size)] unless i == length
+				output << @@separators[@rand.random_number(@@separators_size)] unless i == length
 			end
 			output.join
 		end
