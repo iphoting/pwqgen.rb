@@ -1,4 +1,4 @@
-= 0.0.3 / Unreleased
+= 0.0.3 / 2012-07-09
 
 	* Improved CLI output.
 	* `Pwqgen.new` now works.
