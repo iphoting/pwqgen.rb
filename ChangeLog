@@ -1,8 +1,11 @@
-= 0.0.3 / Unreleased
+= 0.0.3 / 2012-07-09
 
 	* Improved CLI output.
 	* `Pwqgen.new` now works.
 	* Updated documentation with better usage examples.
+	* Forked and included docopt.rb, to workaround overly high rubygems
+	version requirement.
+	* Use a high-quality, secure random number generator.
 
 = 0.0.2 / 2012-06-29
 
