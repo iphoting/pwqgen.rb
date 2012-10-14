@@ -4,13 +4,15 @@ require 'pwqgen/version'
 require 'pwqgen'
 require 'docopt'
 
+filename = File.basename(__FILE__)
+
 doc = <<DOCOPT
 Generate a random pronouncable passphrase.
 
 Usage:
-  #{__FILE__} [LENGTH]
-  #{__FILE__} [-h | --help]
-  #{__FILE__} [-v | --version]
+  #{filename} [LENGTH]
+  #{filename} [-h | --help]
+  #{filename} [-v | --version]
 
 Arguments:
   LENGTH          Number of words in the passphrase. [default: 3]
