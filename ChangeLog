@@ -1,3 +1,7 @@
+= 0.0.4 / 2012-10-14
+	* Improved CLI option parsing.
+	* Reverted to vendor docopt.rb.
+
 = 0.0.3 / 2012-07-09
 
 	* Improved CLI output.

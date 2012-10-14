@@ -2,23 +2,34 @@
 
 require 'pwqgen/version'
 require 'pwqgen'
+require 'docopt'
 
-doc = "Usage: pwqgen.rb [options] [<length>]
+doc = <<DOCOPT
+Generate a random pronouncable passphrase.
+
+Usage:
+  #{__FILE__} [LENGTH]
+  #{__FILE__} [-h | --help]
+  #{__FILE__} [-v | --version]
+
+Arguments:
+  LENGTH          Number of words in the passphrase. [default: 3]
 
 Options:
   -h, --help      show this help message and exit
   -v, --version   show version and exit
 
-<length>: Number of words in the passphrase. [default: 3]
-"
+DOCOPT
 
-require 'pwqgen/docopt'
+begin
+  options = Docopt::docopt(doc, version: Pwqgen::VERSION)
 
-options = Docopt(doc, Pwqgen::VERSION)
-
-if ARGV.length > 0 && ARGV[0].to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) then
-puts Pwqgen.generate(ARGV[0].to_i)
-else
-puts Pwqgen.generate
+  if ARGV.length > 0 && ARGV[0].to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) then
+    puts Pwqgen.generate(ARGV[0].to_i)
+  else
+    puts Pwqgen.generate
+  end
+rescue Docopt::Exit => e
+  puts e.message
 end
 
