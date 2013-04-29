@@ -24,7 +24,7 @@ Options:
 DOCOPT
 
 begin
-  options = Docopt::docopt(doc, version: Pwqgen::VERSION)
+  options = Docopt::docopt(doc, :version => Pwqgen::VERSION)
 
   if ARGV.length > 0 && ARGV[0].to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) then
     puts Pwqgen.generate(ARGV[0].to_i)
