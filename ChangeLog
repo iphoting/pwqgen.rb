@@ -1,4 +1,10 @@
+= 0.0.5 / 2013-05-01
+
+	* Minor CLI help formatting improvements.
+	* Now supports ruby-1.8.7.
+
 = 0.0.4 / 2012-10-14
+
 	* Improved CLI option parsing.
 	* Reverted to vendor docopt.rb.
 
