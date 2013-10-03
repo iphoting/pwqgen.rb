@@ -42,9 +42,9 @@ module Pwqgen
 	end
 
 	class Generator
-		def initialize
+		def initialize(separators = "-_!$&*+=23456789")
 			@@wordlist_size = @@wordlist.length
-			@@separators = "-_!$&*+=23456789".split(//)
+			@@separators = separators.split(//)
 			@@separators_size = @@separators.length
 			@rand = SecureRandom
 		end
