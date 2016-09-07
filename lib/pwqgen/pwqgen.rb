@@ -1,5 +1,5 @@
 require 'pwqgen/wordlist'
-require 'securerandom'
+require 'sysrandom/securerandom'
 
 # Public: Pwqgen is a Ruby implementation of passwdqc's pwqgen password
 # generator.
