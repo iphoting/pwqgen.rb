@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.8.7'
   s.required_rubygems_version = ">= 1.3.6"
   s.add_runtime_dependency('docopt', "~> 0.5.0")
+  s.add_runtime_dependency('sysrandom')
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
