@@ -6,7 +6,8 @@ describe Pwqgen do
 		password.should_not be_nil
 		password.should_not be_empty
 		password.should be_kind_of(String)
-		password.length.should be_within(5).of(15)
+		password.length.should >= (9 + 3 - 1)
+		password.length.should <= (27 + 3 - 1)
 	end
 
 	it "should return a short random password when given a length of 1" do
@@ -14,7 +15,8 @@ describe Pwqgen do
 		password.should_not be_nil
 		password.should_not be_empty
 		password.should be_kind_of(String)
-		password.length.should be_within(2).of(4)
+		password.length.should >= (3 + 1 - 1)
+		password.length.should <= (9 + 1 - 1)
 	end
 
 	it "should return a longer random password when given a length of 5" do
@@ -22,7 +24,8 @@ describe Pwqgen do
 		password.should_not be_nil
 		password.should_not be_empty
 		password.should be_kind_of(String)
-		password.length.should be_within(8).of(27)
+		password.length.should >= (15 + 5 - 1)
+		password.length.should <= (45 + 5 - 1)
 	end
 
 	it "should return a Pwqgen::Generator object when Pwqgen.new is called" do
@@ -38,7 +41,8 @@ describe Pwqgen::Generator do
 		password.should_not be_nil
 		password.should_not be_empty
 		password.should be_kind_of(String)
-		password.length.should be_within(5).of(15)
+		password.length.should >= (9 + 3 - 1)
+		password.length.should <= (27 + 3 - 1)
 	end
 
 	it "should return a short random password when given a length of 1" do
@@ -46,7 +50,8 @@ describe Pwqgen::Generator do
 		password.should_not be_nil
 		password.should_not be_empty
 		password.should be_kind_of(String)
-		password.length.should be_within(2).of(4)
+		password.length.should >= (3 + 1 - 1)
+		password.length.should <= (9 + 1 - 1)
 	end
 
 	it "should return a longer random password when given a length of 5" do
@@ -54,6 +59,7 @@ describe Pwqgen::Generator do
 		password.should_not be_nil
 		password.should_not be_empty
 		password.should be_kind_of(String)
-		password.length.should be_within(8).of(27)
+		password.length.should >= (15 + 5 - 1)
+		password.length.should <= (45 + 5 - 1)
 	end
 end

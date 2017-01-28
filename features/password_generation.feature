@@ -8,14 +8,14 @@ Feature: Password Generation
 
 	Scenario: Generate a random password of default length
 		When I run `pwqgen.rb`
-		Then the output should match /^[A-Za-z]{3,6}([-_!$&*+=23456789][A-Za-z]{3,6}){2}$/
+		Then the output should match /^[A-Za-z]{3,9}([-_!$&*+=23456789][A-Za-z]{3,9}){2}$/
 
 	Scenario: Generate a random password of length 2
 		When I run `pwqgen.rb 2`
-		Then the output should match /^[A-Za-z]{3,6}([-_!$&*+=23456789][A-Za-z]{3,6}){1}$/
+		Then the output should match /^[A-Za-z]{3,9}([-_!$&*+=23456789][A-Za-z]{3,9}){1}$/
 
 	Scenario: Generate a random password of length 5
 		When I run `pwqgen.rb 5`
-		Then the output should match /^[A-Za-z]{3,6}([-_!$&*+=23456789][A-Za-z]{3,6}){4}$/
+		Then the output should match /^[A-Za-z]{3,9}([-_!$&*+=23456789][A-Za-z]{3,9}){4}$/
 
 
