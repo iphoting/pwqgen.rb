@@ -9,7 +9,7 @@ RSpec::Core::RakeTask.new do |spec|
 	spec.rspec_opts = ['-f d', '--color']
 end
 Cucumber::Rake::Task.new(:features) do |t|
-	t.cucumber_opts = "features --format pretty"
+	t.cucumber_opts = ["features", "--format", "pretty"]
 end
 
 task :default => :test
