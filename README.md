@@ -1,6 +1,6 @@
 # pwqgen.rb
 
-[![Gem Version](https://badge.fury.io/rb/pwqgen.rb.svg)](https://badge.fury.io/rb/pwqgen.rb)
+![GitHub Action Tests](https://github.com/iphoting/pwqgen.rb/actions/workflows/test.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/pwqgen.rb.svg)](https://badge.fury.io/rb/pwqgen.rb)
 
 pwqgen.rb is a Ruby implementation of passwdqc's pwqgen, a random pronouncable password generator.
 

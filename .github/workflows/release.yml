@@ -1,0 +1,58 @@
+name: Release
+on:
+  push:
+    branches:
+      - "master" # main only
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        id: release
+        with:
+          release-type: ruby
+          package-name: "pwqgen.rb"
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+          version-file: "lib/pwqgen/version.rb"
+
+      # Checkout code
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Setup ruby
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Run tests
+        run: |
+          bundle exec rake test
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Publish if release was created
+      - name: publish gem
+        run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          bundle exec rake build
+          gem push pkg/*.gem
+        env:
+          # Make sure to update the secret name
+          # if yours isn't named RUBYGEMS_AUTH_TOKEN
+          GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
+        if: ${{ steps.release.outputs.release_created }}
+
+      - name: Upload Release Artifact
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          gh release upload ${{ steps.release.outputs.tag_name }} pkg/*.gem
