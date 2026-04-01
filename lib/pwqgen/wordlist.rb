@@ -41,7 +41,7 @@
 #
 module Pwqgen
 	class Generator
-		@@wordlist = [
+		WORDLIST = [
 			"abacus",
 			"abdomen",
 			"abdominal",

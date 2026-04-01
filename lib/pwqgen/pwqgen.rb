@@ -1,5 +1,4 @@
 require 'pwqgen/wordlist'
-require 'sysrandom/securerandom'
 
 # Public: Pwqgen is a Ruby implementation of passwdqc's pwqgen password
 # generator.
@@ -21,14 +20,14 @@ require 'sysrandom/securerandom'
 module Pwqgen
 
 	# Public: Returns a random generated password string.
-	# 
+	#
 	# length - number of words used to create the passphrase.
-	# 
+	#
 	# Example
-	# 
+	#
 	# 	Pwqgen.generate 2
 	# 	# => "Loyal8atomic"
-	# 
+	#
 	# 	Pwqgen.generate
 	# 	# => "Gate*Abound&hull"
 	#
@@ -42,33 +41,32 @@ module Pwqgen
 	end
 
 	class Generator
-		def initialize(separators = "-_!$&*+=23456789")
-			@@wordlist_size = @@wordlist.length
-			@@separators = separators.split(//)
-			@@separators_size = @@separators.length
-			@rand = SecureRandom
+		DEFAULT_SEPARATORS = "-_!$&*+=23456789".chars.freeze
+
+		def initialize(separators = DEFAULT_SEPARATORS)
+			@separators = separators
 		end
 
 		# Public: Returns a random generated password string.
-		# 
+		#
 		# length - number of words used to create the passphrase.
-		# 
+		#
 		# Example
-		# 
+		#
 		# 	generate 2
 		# 	# => "Loyal8atomic"
-		# 
+		#
 		# 	generate
 		# 	# => "Gate*Abound&hull"
 		#
 		# Returns a password string.
 		def generate(length = 3)
-			output = Array.new
-			for i in 1..length
-				output << @@wordlist[@rand.random_number(@@wordlist_size)]
-				output[i-1] = output[i-1].capitalize if @rand.random_number(2)
-
-				output << @@separators[@rand.random_number(@@separators_size)] unless i == length
+			output = []
+			(1..length).each do |i|
+				word = WORDLIST[SecureRandom.random_number(WORDLIST.length)]
+				word = word.capitalize if SecureRandom.random_number(2).odd?
+				output << word
+				output << @separators[SecureRandom.random_number(@separators.length)] unless i == length
 			end
 			output.join
 		end
