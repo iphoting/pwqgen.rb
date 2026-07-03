@@ -49,7 +49,7 @@ p pgen.generate 2             # => "Easily2desist"
 
 ## Related
 
-- A web-based demonstration is available on [Heroku](https://pwqgen.herokuapp.com/). ([Source](https://github.com/iphoting/pwqgen-web)).
+- A web-based demonstration is available on [here](https://pwqgen.iphoting.com/). ([Source](https://github.com/iphoting/pwqgen-web)).
 - Original C Implementation, <http://www.openwall.com/passwdqc/>.
 
 ## Credits
